@@ -1,0 +1,106 @@
+/* Resetting styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and Container */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f3e30a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #070707;
+    padding: 40px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo */
+.logo img {
+    width: 100px;
+    margin-bottom: 20px;
+}
+
+/* Heading and Description */
+h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+p {
+    color: #777;
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Input Fields and Buttons */
+input {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 30px;
+    border: 2px solid #ddd;
+    font-size: 1rem;
+    background-color: #030303;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input:focus {
+    border-color: #da0606;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    border-radius: 30px;
+    border: none;
+    background-color: #2ecc71;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #27ae60;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Resend OTP Section */
+#resendInfo {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+#resendBtn {
+    background-color: transparent;
+    border: none;
+    color: #2ecc71;
+    cursor: pointer;
+    font-size: 0.9rem;
+    padding: 0;
+    transition: color 0.3s ease;
+}
+
+#resendBtn:disabled 
