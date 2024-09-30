@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-commerce </title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="C:\Users\vijay\Downloads\WhatsApp_Image_2024-09-25_at_3.25.18_PM-removebg-preview.png" height="60px" width="90px">
+    </div>
+    <nav class="navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="header-icons">
+        <a href="#" class="search-icon"><ion-icon name="search-outline"></ion-icon></a>
+        <a href="https://www.flipkart.com/viewcart?exploreMode=true&preference=FLIPKART" class="cart-icon"><ion-icon name="cart-outline"></ion-icon><span class="cart-count">2</span></a>
+        <a href="https://chatgpt.com/" class="profile-icon"><ion-icon name="person-outline"></ion-icon></a>
+    </div>
+
+    <div class="hamburger">
+        <ion-icon name="menu-outline"></ion-icon>
+    </div>
+</header>
+
+<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Comparison Across E-commerce Platforms</title>
+    <style>
+        /* Body and General Styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.pexels.com/photos/2983464/pexels-photo-2983464.jpeg');
+            background-size: cover;
+            color: #fff;
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #FFD700;
+            font-size: 48px;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px #000;
+        }
+
+        .search-bar {
+            margin-bottom: 30px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .search-bar input {
+            padding: 12px;
+            font-size: 18px;
+            width: 60%;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .search-bar button {
+            padding: 12px 24px;
+            font-size: 18px;
+            background-color: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .search-bar button:hover {
+            background-color: #cc0000;
+        }
+
+        /* Product List and Card Styling */
+        .product-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+
+        .product-card {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            width: 30%;
+            padding: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+
+        .product-card img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .product-info h4 {
+            color: #FFD700;
+            margin-top: 15px;
+            font-size: 24px;
+        }
+
+        .platform-logo img {
+            height: 40px;
+            width: auto;
+            margin-top: 10px;
+        }
+
+        .price {
+            color: #32CD32;
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        .review {
+            color: #ffcc00;
+            font-size: 16px;
+            margin-top: 5px;
+        }
+
+        .buy-link {
+            margin-top: 15px;
+        }
+
+        .buy-link a {
+            text-decoration: none;
+            color: #FFD700;
+            font-weight: bold;
+        }
+
+        .buy-link a:hover {
+            color: #ff0000;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Compare Prices Across E-commerce Platforms</h1>
+        
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for a product..." />
+            <button onclick="searchProduct()">Search</button>
+        </div>
+
+        <div id="productContainer" class="product-list"></div>
+    </div>
+
+    <script>
+        const platforms = [
+            {
+                name: 'Amazon',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg',
+                url: 'https://www.amazon.in/s?k=',
+            },
+            {
+                name: 'Flipkart',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1e/Flipkart-logo.png',
+                url: 'https://www.flipkart.com/search?q=',
+            },
+            {
+                name: 'Myntra',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/12/Myntra_Logo.png/1200px-Myntra_Logo.png',
+                url: 'https://www.myntra.com/',
+            },
+            {
+                name: 'Meesho',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/4c/Meesho_Logo_Pink.png',
+                url: 'https://www.meesho.com/search?q=',
+            },
+            {
+                name: 'IndianMart',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/6/68/IndiaMART_new_logo.png',
+                url: 'https://dir.indiamart.com/search.mp?ss=',
+            },
+            {
+                name: 'Snapdeal',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/9/96/Snapdeal_Logo.svg',
+                url: 'https://www.snapdeal.com/search?keyword=',
+            },
+            {
+                name: 'JioMart',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/1/1d/JioMart_Logo.png',
+                url: 'https://www.jiomart.com/search/?q=',
+            },
+            {
+                name: 'AJIO',
+                logo: 'https://upload.wikimedia.org/wikipedia/commons/4/48/AJIO_Logo.png',
+                url: 'https://www.ajio.com/search/?text=',
+            },
+        ];
+
+        function searchProduct() {
+            const productName = document.getElementById("searchInput").value;
+            const productContainer = document.getElementById("productContainer");
+
+            // Clear previous results
+            productContainer.innerHTML = '';
+
+            // Generate product cards for each platform
+            platforms.forEach(platform => {
+                const productCard = document.createElement('div');
+                productCard.className = 'product-card';
+                
+                // Mock data for product
+                const productPrice = (Math.random() * 10000).toFixed(2); // Generate random price
+                const productReview = Math.floor(Math.random() * 500) + " reviews"; // Random reviews
+
+                // Product HTML structure
+                productCard.innerHTML = `
+                    <img src="https://via.placeholder.com/300x200?text=${encodeURIComponent(productName)}" alt="${productName}">
+                    <div class="product-info">
+                        <h4>${productName}</h4>
+                        <div class="platform-logo">
+                            <img src="${platform.logo}" alt="${platform.name} logo">
+                        </div>
+                        <div class="price">${productPrice}</div>
+                        <div class="review">${productReview}</div>
+                        <div class="buy-link">
+                            <a href="${platform.url}${encodeURIComponent(productName)}" target="_blank">Buy on ${platform.name}</a>
+                        </div>
+                    </div>
+                `;
+                
+                // Append product card to the container
+                productContainer.appendChild(productCard);
+            });
+        }
+    </script>
+
+
+</body>
+</html>
